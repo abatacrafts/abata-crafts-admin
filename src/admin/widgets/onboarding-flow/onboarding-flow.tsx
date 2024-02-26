@@ -479,25 +479,25 @@ const OnboardingFlow = (props: OnboardingWidgetProps) => {
               </>
             ) : (
               <>
-                <div>
-                  <Heading level="h1" className="text-ui-fg-base">
-                    Thank you for completing the setup guide!
-                  </Heading>
-                  <Text>
-                    This whole experience was built using our new{" "}
-                    <strong>widgets</strong> feature.
-                    <br /> You can find out more details and build your own by
-                    following{" "}
-                    <a
-                      href="https://docs.medusajs.com/admin/onboarding?ref=onboarding"
-                      target="_blank"
-                      className="font-semibold text-blue-500"
-                    >
-                      our guide
-                    </a>
-                    .
-                  </Text>
-                </div>
+                {/* <div> */}
+                {/*   <Heading level="h1" className="text-ui-fg-base"> */}
+                {/*     Thank you for completing the setup guide! */}
+                {/*   </Heading> */}
+                {/*   <Text> */}
+                {/*     This whole experience was built using our new{" "} */}
+                {/*     <strong>widgets</strong> feature. */}
+                {/*     <br /> You can find out more details and build your own by */}
+                {/*     following{" "} */}
+                {/*     <a */}
+                {/*       href="https://docs.medusajs.com/admin/onboarding?ref=onboarding" */}
+                {/*       target="_blank" */}
+                {/*       className="font-semibold text-blue-500" */}
+                {/*     > */}
+                {/*       our guide */}
+                {/*     </a> */}
+                {/*     . */}
+                {/*   </Text> */}
+                {/* </div> */}
                 <div className="flex gap-2 items-start ml-auto">
                   <Button
                     variant="secondary"
