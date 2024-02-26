@@ -200,9 +200,15 @@ const OnboardingFlow = (props: OnboardingWidgetProps) => {
               },
             },
             {
-              id: "setup_finished",
-              title: "Setup Finished: Start developing with Medusa",
-              component: OrderDetailDefault,
+              id: "setup_finished_nextjs",
+              title: "Setup Finished: Continue Building your Ecommerce Store",
+              onComplete: () => {
+                navigate("/orders")
+              }
+
+              // id: "setup_finished",
+              // title: "Setup Finished: Start developing with Medusa",
+              // component: OrderDetailDefault,
             },
           ]
       }
@@ -228,26 +234,29 @@ const OnboardingFlow = (props: OnboardingWidgetProps) => {
     switch (onboardingStep) {
       case "setup_finished_nextjs":
       case "setup_finished":
-        if (!data?.orderId && "order" in props) {
-          return props.order
-        }
-        const orderId = data?.orderId || searchParams.get("order_id")
-        if (orderId) {
-          return (await client.admin.orders.retrieve(orderId)).order
-        }
-
-        throw new Error("Required `order_id` parameter was not passed as a parameter")
-      case "preview_product_nextjs":
-      case "preview_product":
-        if (!data?.productId && "product" in props) {
-          return props.product
-        }
-        const productId = data?.productId || searchParams.get("product_id")
-        if (productId) {
-          return (await client.admin.products.retrieve(productId)).product
-        }
-
-        throw new Error("Required `product_id` parameter was not passed as a parameter")
+        navigate("/orders")
+      //
+      //
+      //   if (!data?.orderId && "order" in props) {
+      //     return props.order
+      //   }
+      //   const orderId = data?.orderId || searchParams.get("order_id")
+      //   if (orderId) {
+      //     return (await client.admin.orders.retrieve(orderId)).order
+      //   }
+      //
+      //   throw new Error("Required `order_id` parameter was not passed as a parameter")
+      // case "preview_product_nextjs":
+      // case "preview_product":
+      //   if (!data?.productId && "product" in props) {
+      //     return props.product
+      //   }
+      //   const productId = data?.productId || searchParams.get("product_id")
+      //   if (productId) {
+      //     return (await client.admin.products.retrieve(productId)).product
+      //   }
+      //
+      //   throw new Error("Required `product_id` parameter was not passed as a parameter")
       default:
         return undefined
     }
