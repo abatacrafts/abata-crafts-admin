@@ -148,7 +148,11 @@ const OnboardingFlow = (props: OnboardingWidgetProps) => {
             {
               id: "setup_finished_nextjs",
               title: "Setup Finished: Continue Building your Ecommerce Store",
-              component: OrderDetailNextjs,
+              onComplete: () => {
+                navigate("/orders")
+              }
+
+              // component: OrderDetailNextjs,
             },
           ]
         default:
